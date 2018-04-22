@@ -4,14 +4,17 @@
 	<title>DeboWorld</title>
 </head>
 <body>
-	<div>
-		<h1><a href="">DeboWorld</h1>
-	</div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-	<div>
-		<p>Djangogirls</p>
-		<h2><a href="">Il mio primo post</h2>
-		<p>Bla bla e ancora bla</p>
-	</div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
 </body>
 </html>
